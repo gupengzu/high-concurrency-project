@@ -1,0 +1,10 @@
+H:\Study\My_high-concurrency project\hmall\item-service\src\main\java\com\hmall\item\domain\dto\OrderDetailDTO.java
+H:\Study\My_high-concurrency project\hmall\item-service\src\main\java\com\hmall\item\domain\query\ItemPageQuery.java
+H:\Study\My_high-concurrency project\hmall\item-service\src\main\java\com\hmall\item\service\IItemService.java
+H:\Study\My_high-concurrency project\hmall\item-service\src\main\java\com\hmall\item\controller\SearchController.java
+H:\Study\My_high-concurrency project\hmall\item-service\src\main\java\com\hmall\item\controller\ItemController.java
+H:\Study\My_high-concurrency project\hmall\item-service\src\main\java\com\hmall\item\ItemApplication.java
+H:\Study\My_high-concurrency project\hmall\item-service\src\main\java\com\hmall\item\mapper\ItemMapper.java
+H:\Study\My_high-concurrency project\hmall\item-service\src\main\java\com\hmall\item\service\impl\ItemServiceImpl.java
+H:\Study\My_high-concurrency project\hmall\item-service\src\main\java\com\hmall\item\domain\dto\ItemDTO.java
+H:\Study\My_high-concurrency project\hmall\item-service\src\main\java\com\hmall\item\domain\po\Item.java

@@ -1,0 +1,78 @@
+00:40:01:596  INFO 28708 --- [main] c.h.service.impl.ItemServiceImplTest     : Starting ItemServiceImplTest using Java 17 on LAPTOP-NEKV1S4P with PID 28708 (started by ¹ÈÅô×æ in H:\Study\My_high-concurrency project\hmall\hm-service)
+00:40:01:619 DEBUG 28708 --- [main] c.h.service.impl.ItemServiceImplTest     : Running with Spring Boot v2.7.12, Spring v5.3.27
+00:40:01:620  INFO 28708 --- [main] c.h.service.impl.ItemServiceImplTest     : The following 1 profile is active: "dev"
+00:40:04:794  INFO 28708 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+00:40:04:808  INFO 28708 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+00:40:04:892  INFO 28708 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 32 ms. Found 0 Redis repository interfaces.
+00:40:14:015  INFO 28708 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+00:40:14:104  INFO 28708 --- [main] c.h.service.impl.ItemServiceImplTest     : Started ItemServiceImplTest in 13.696 seconds (JVM running for 16.459)
+00:40:15:781  WARN 28708 --- [main] com.hmall.service.impl.ItemServiceImpl   : SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@55300b93] Transaction not enabled
+00:40:15:819  INFO 28708 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+00:40:17:699  INFO 28708 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+00:40:17:713 DEBUG 28708 --- [main] com.hmall.mapper.ItemMapper.updateStock  : ==>  Preparing: UPDATE item SET stock = stock - ? WHERE id = ?
+00:40:17:770 DEBUG 28708 --- [main] com.hmall.mapper.ItemMapper.updateStock  : ==> Parameters: 1(Integer), 317578(Long)
+00:40:17:787 DEBUG 28708 --- [main] com.hmall.mapper.ItemMapper.updateStock  : ==> Parameters: 1(Integer), 317580(Long)
+00:42:13:975  INFO 16808 --- [main] c.h.service.impl.ItemServiceImplTest     : Starting ItemServiceImplTest using Java 17 on LAPTOP-NEKV1S4P with PID 16808 (started by ¹ÈÅô×æ in H:\Study\My_high-concurrency project\hmall\hm-service)
+00:42:13:977 DEBUG 16808 --- [main] c.h.service.impl.ItemServiceImplTest     : Running with Spring Boot v2.7.12, Spring v5.3.27
+00:42:13:977  INFO 16808 --- [main] c.h.service.impl.ItemServiceImplTest     : The following 1 profile is active: "dev"
+00:42:15:296  INFO 16808 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+00:42:15:299  INFO 16808 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+00:42:15:339  INFO 16808 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 26 ms. Found 0 Redis repository interfaces.
+00:42:20:794  INFO 16808 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+00:42:20:903  INFO 16808 --- [main] c.h.service.impl.ItemServiceImplTest     : Started ItemServiceImplTest in 7.437 seconds (JVM running for 8.816)
+00:42:21:848  WARN 16808 --- [main] com.hmall.service.impl.ItemServiceImpl   : SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3b399f5a] Transaction not enabled
+00:42:21:857  INFO 16808 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+00:42:23:028  INFO 16808 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+00:42:23:043 DEBUG 16808 --- [main] com.hmall.mapper.ItemMapper.updateStock  : ==>  Preparing: UPDATE item SET stock = stock - ? WHERE id = ?
+00:42:23:089 DEBUG 16808 --- [main] com.hmall.mapper.ItemMapper.updateStock  : ==> Parameters: 1(Integer), 317578(Long)
+00:42:23:090 DEBUG 16808 --- [main] com.hmall.mapper.ItemMapper.updateStock  : ==> Parameters: 1(Integer), 317580(Long)
+00:42:23:416  INFO 16808 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+00:42:23:741  INFO 16808 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+00:45:42:979  INFO 6544 --- [main] c.h.service.impl.ItemServiceImplTest     : Starting ItemServiceImplTest using Java 17 on LAPTOP-NEKV1S4P with PID 6544 (started by ¹ÈÅô×æ in H:\Study\My_high-concurrency project\hmall\hm-service)
+00:45:42:981 DEBUG 6544 --- [main] c.h.service.impl.ItemServiceImplTest     : Running with Spring Boot v2.7.12, Spring v5.3.27
+00:45:42:982  INFO 6544 --- [main] c.h.service.impl.ItemServiceImplTest     : The following 1 profile is active: "dev"
+00:45:44:292  INFO 6544 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+00:45:44:296  INFO 6544 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+00:45:44:361  INFO 6544 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 38 ms. Found 0 Redis repository interfaces.
+00:45:50:394  INFO 6544 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+00:45:50:519  INFO 6544 --- [main] c.h.service.impl.ItemServiceImplTest     : Started ItemServiceImplTest in 8.022 seconds (JVM running for 9.322)
+00:45:51:625  WARN 6544 --- [main] com.hmall.service.impl.ItemServiceImpl   : SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@257708e] Transaction not enabled
+00:45:51:637  INFO 6544 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+00:45:52:725  INFO 6544 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+00:45:52:736 DEBUG 6544 --- [main] com.hmall.mapper.ItemMapper.updateStock  : ==>  Preparing: UPDATE item SET stock = stock - ? WHERE id = ?
+00:45:52:792 DEBUG 6544 --- [main] com.hmall.mapper.ItemMapper.updateStock  : ==> Parameters: 1(Integer), 317578(Long)
+00:45:52:797 DEBUG 6544 --- [main] com.hmall.mapper.ItemMapper.updateStock  : ==> Parameters: 1(Integer), 317580(Long)
+00:45:53:064  INFO 6544 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+00:45:53:479  INFO 6544 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+00:48:12:252  INFO 31900 --- [main] c.h.service.impl.ItemServiceImplTest     : Starting ItemServiceImplTest using Java 17 on LAPTOP-NEKV1S4P with PID 31900 (started by ¹ÈÅô×æ in H:\Study\My_high-concurrency project\hmall\hm-service)
+00:48:12:255 DEBUG 31900 --- [main] c.h.service.impl.ItemServiceImplTest     : Running with Spring Boot v2.7.12, Spring v5.3.27
+00:48:12:256  INFO 31900 --- [main] c.h.service.impl.ItemServiceImplTest     : The following 1 profile is active: "dev"
+00:48:13:769  INFO 31900 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+00:48:13:773  INFO 31900 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+00:48:13:828  INFO 31900 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 34 ms. Found 0 Redis repository interfaces.
+00:48:19:713  INFO 31900 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+00:48:19:829  INFO 31900 --- [main] c.h.service.impl.ItemServiceImplTest     : Started ItemServiceImplTest in 8.103 seconds (JVM running for 9.471)
+00:48:21:076  WARN 31900 --- [main] com.hmall.service.impl.ItemServiceImpl   : SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@54eb2bf6] Transaction not enabled
+00:48:21:092  INFO 31900 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+00:48:22:286  INFO 31900 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+00:48:22:302 DEBUG 31900 --- [main] com.hmall.mapper.ItemMapper.updateStock  : ==>  Preparing: UPDATE item SET stock = stock - ? WHERE id = ?
+00:48:22:347 DEBUG 31900 --- [main] com.hmall.mapper.ItemMapper.updateStock  : ==> Parameters: 1(Integer), 317578(Long)
+00:48:22:349 DEBUG 31900 --- [main] com.hmall.mapper.ItemMapper.updateStock  : ==> Parameters: 1(Integer), 317580(Long)
+00:48:22:619  INFO 31900 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+00:48:22:995  INFO 31900 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+00:53:16:465  INFO 32884 --- [main] c.h.service.impl.ItemServiceImplTest     : Starting ItemServiceImplTest using Java 17 on LAPTOP-NEKV1S4P with PID 32884 (started by ¹ÈÅô×æ in H:\Study\My_high-concurrency project\hmall\hm-service)
+00:53:16:467 DEBUG 32884 --- [main] c.h.service.impl.ItemServiceImplTest     : Running with Spring Boot v2.7.12, Spring v5.3.27
+00:53:16:468  INFO 32884 --- [main] c.h.service.impl.ItemServiceImplTest     : The following 1 profile is active: "dev"
+00:53:17:734  INFO 32884 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+00:53:17:737  INFO 32884 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+00:53:17:786  INFO 32884 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 30 ms. Found 0 Redis repository interfaces.
+00:53:23:703  INFO 32884 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+00:53:23:884  INFO 32884 --- [main] c.h.service.impl.ItemServiceImplTest     : Started ItemServiceImplTest in 7.928 seconds (JVM running for 9.296)
+00:53:25:123  WARN 32884 --- [main] com.hmall.service.impl.ItemServiceImpl   : SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6167a456] Transaction not enabled
+00:53:25:185  INFO 32884 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+00:53:26:333  INFO 32884 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+00:53:26:346 DEBUG 32884 --- [main] com.hmall.mapper.ItemMapper.updateStock  : ==>  Preparing: UPDATE item SET stock = stock - ? WHERE id = ?
+00:53:26:396 DEBUG 32884 --- [main] com.hmall.mapper.ItemMapper.updateStock  : ==> Parameters: 1(Integer), 317578(Long)
+00:53:26:400 DEBUG 32884 --- [main] com.hmall.mapper.ItemMapper.updateStock  : ==> Parameters: 1(Integer), 317580(Long)
+00:53:26:707  INFO 32884 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+00:53:27:084  INFO 32884 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

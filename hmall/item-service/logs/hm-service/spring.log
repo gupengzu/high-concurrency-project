@@ -1,0 +1,84 @@
+12:58:00:444  INFO 29060 --- [main] com.hmall.item.ItemApplication           : Starting ItemApplication using Java 17 on LAPTOP-NEKV1S4P with PID 29060 (H:\Study\My_high-concurrency project\hmall\item-service\target\classes started by ¹ÈÅô×æ in H:\Study\My_high-concurrency project\hmall\item-service)
+12:58:00:446 DEBUG 29060 --- [main] com.hmall.item.ItemApplication           : Running with Spring Boot v2.7.12, Spring v5.3.27
+12:58:00:447  INFO 29060 --- [main] com.hmall.item.ItemApplication           : The following 1 profile is active: "dev"
+12:58:01:004  INFO 29060 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+12:58:01:010  INFO 29060 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+12:58:01:011  INFO 29060 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.75]
+12:58:01:079  INFO 29060 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+12:58:01:080  INFO 29060 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 605 ms
+12:58:01:525  INFO 29060 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+12:58:01:531  INFO 29060 --- [main] com.hmall.item.ItemApplication           : Started ItemApplication in 1.374 seconds (JVM running for 1.563)
+12:58:14:697  INFO 29060 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+12:58:14:697  INFO 29060 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+12:58:14:698  INFO 29060 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+12:59:33:739  INFO 30596 --- [main] com.hmall.item.ItemApplication           : Starting ItemApplication using Java 17 on LAPTOP-NEKV1S4P with PID 30596 (H:\Study\My_high-concurrency project\hmall\item-service\target\classes started by ¹ÈÅô×æ in H:\Study\My_high-concurrency project\hmall\item-service)
+12:59:33:741 DEBUG 30596 --- [main] com.hmall.item.ItemApplication           : Running with Spring Boot v2.7.12, Spring v5.3.27
+12:59:33:741  INFO 30596 --- [main] com.hmall.item.ItemApplication           : The following 1 profile is active: "dev"
+12:59:34:414  INFO 30596 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+12:59:34:421  INFO 30596 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+12:59:34:421  INFO 30596 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.75]
+12:59:34:491  INFO 30596 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+12:59:34:491  INFO 30596 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 719 ms
+12:59:34:908  INFO 30596 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2ControllerWebMvc#getDocumentation(String, HttpServletRequest)]
+12:59:34:953  INFO 30596 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+12:59:34:954  INFO 30596 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Documentation plugins bootstrapped
+12:59:34:955  INFO 30596 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+12:59:34:976  INFO 30596 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+12:59:34:984  INFO 30596 --- [main] com.hmall.item.ItemApplication           : Started ItemApplication in 1.476 seconds (JVM running for 1.657)
+12:59:38:643  INFO 30596 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+12:59:38:644  INFO 30596 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+12:59:38:645  INFO 30596 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+13:00:46:863  INFO 31148 --- [main] com.hmall.item.ItemApplication           : Starting ItemApplication using Java 17 on LAPTOP-NEKV1S4P with PID 31148 (H:\Study\My_high-concurrency project\hmall\item-service\target\classes started by ¹ÈÅô×æ in H:\Study\My_high-concurrency project\hmall\item-service)
+13:00:46:864 DEBUG 31148 --- [main] com.hmall.item.ItemApplication           : Running with Spring Boot v2.7.12, Spring v5.3.27
+13:00:46:865  INFO 31148 --- [main] com.hmall.item.ItemApplication           : The following 1 profile is active: "dev"
+13:00:47:567  INFO 31148 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+13:00:47:573  INFO 31148 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+13:00:47:573  INFO 31148 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.75]
+13:00:47:655  INFO 31148 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+13:00:47:655  INFO 31148 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 755 ms
+13:00:48:087  INFO 31148 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2ControllerWebMvc#getDocumentation(String, HttpServletRequest)]
+13:00:48:134  INFO 31148 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+13:00:48:134  INFO 31148 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Documentation plugins bootstrapped
+13:00:48:136  INFO 31148 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+13:00:48:156  INFO 31148 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+13:00:48:163  INFO 31148 --- [main] com.hmall.item.ItemApplication           : Started ItemApplication in 1.539 seconds (JVM running for 1.725)
+13:01:03:036  INFO 31148 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+13:01:03:036  INFO 31148 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+13:01:03:037  INFO 31148 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+13:02:58:191  INFO 20756 --- [main] com.hmall.item.ItemApplication           : Starting ItemApplication using Java 17 on LAPTOP-NEKV1S4P with PID 20756 (H:\Study\My_high-concurrency project\hmall\item-service\target\classes started by ¹ÈÅô×æ in H:\Study\My_high-concurrency project\hmall\item-service)
+13:02:58:192 DEBUG 20756 --- [main] com.hmall.item.ItemApplication           : Running with Spring Boot v2.7.12, Spring v5.3.27
+13:02:58:193  INFO 20756 --- [main] com.hmall.item.ItemApplication           : The following 1 profile is active: "dev"
+13:02:58:895  INFO 20756 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+13:02:58:901  INFO 20756 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+13:02:58:901  INFO 20756 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.75]
+13:02:58:965  INFO 20756 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+13:02:58:965  INFO 20756 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 741 ms
+13:02:59:393  INFO 20756 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2ControllerWebMvc#getDocumentation(String, HttpServletRequest)]
+13:02:59:453  INFO 20756 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+13:02:59:454  INFO 20756 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Documentation plugins bootstrapped
+13:02:59:456  INFO 20756 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+13:02:59:478  INFO 20756 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+13:02:59:596  INFO 20756 --- [main] com.hmall.item.ItemApplication           : Started ItemApplication in 1.639 seconds (JVM running for 1.822)
+13:03:03:091  INFO 20756 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+13:03:03:092  INFO 20756 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+13:03:03:093  INFO 20756 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+13:03:28:748  INFO 20756 --- [http-nio-8081-exec-4] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+13:03:30:568  INFO 20756 --- [http-nio-8081-exec-4] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+13:03:30:600 DEBUG 20756 --- [http-nio-8081-exec-4] c.h.i.mapper.ItemMapper.selectBatchIds   : ==>  Preparing: SELECT id,name,price,stock,image,category,brand,spec,sold,comment_count,isAD,status,create_time,update_time,creater,updater FROM item WHERE id IN ( ? )
+13:03:30:635 DEBUG 20756 --- [http-nio-8081-exec-4] c.h.i.mapper.ItemMapper.selectBatchIds   : ==> Parameters: 1(Long)
+13:03:30:718 DEBUG 20756 --- [http-nio-8081-exec-4] c.h.i.mapper.ItemMapper.selectBatchIds   : <==      Total: 0
+13:03:48:364 DEBUG 20756 --- [http-nio-8081-exec-5] c.h.item.mapper.ItemMapper.selectById    : ==>  Preparing: SELECT id,name,price,stock,image,category,brand,spec,sold,comment_count,isAD,status,create_time,update_time,creater,updater FROM item WHERE id=?
+13:03:48:365 DEBUG 20756 --- [http-nio-8081-exec-5] c.h.item.mapper.ItemMapper.selectById    : ==> Parameters: 1(Long)
+13:03:48:410 DEBUG 20756 --- [http-nio-8081-exec-5] c.h.item.mapper.ItemMapper.selectById    : <==      Total: 0
+13:03:50:229 DEBUG 20756 --- [http-nio-8081-exec-8] c.h.item.mapper.ItemMapper.selectById    : ==>  Preparing: SELECT id,name,price,stock,image,category,brand,spec,sold,comment_count,isAD,status,create_time,update_time,creater,updater FROM item WHERE id=?
+13:03:50:230 DEBUG 20756 --- [http-nio-8081-exec-8] c.h.item.mapper.ItemMapper.selectById    : ==> Parameters: 1(Long)
+13:03:50:270 DEBUG 20756 --- [http-nio-8081-exec-8] c.h.item.mapper.ItemMapper.selectById    : <==      Total: 0
+13:04:01:293 DEBUG 20756 --- [http-nio-8081-exec-2] c.h.item.mapper.ItemMapper.selectById    : ==>  Preparing: SELECT id,name,price,stock,image,category,brand,spec,sold,comment_count,isAD,status,create_time,update_time,creater,updater FROM item WHERE id=?
+13:04:01:294 DEBUG 20756 --- [http-nio-8081-exec-2] c.h.item.mapper.ItemMapper.selectById    : ==> Parameters: 1(Long)
+13:04:01:350 DEBUG 20756 --- [http-nio-8081-exec-2] c.h.item.mapper.ItemMapper.selectById    : <==      Total: 0
+13:04:37:663 DEBUG 20756 --- [http-nio-8081-exec-9] c.h.item.mapper.ItemMapper.selectById    : ==>  Preparing: SELECT id,name,price,stock,image,category,brand,spec,sold,comment_count,isAD,status,create_time,update_time,creater,updater FROM item WHERE id=?
+13:04:37:663 DEBUG 20756 --- [http-nio-8081-exec-9] c.h.item.mapper.ItemMapper.selectById    : ==> Parameters: 317578(Long)
+13:04:37:712 DEBUG 20756 --- [http-nio-8081-exec-9] c.h.item.mapper.ItemMapper.selectById    : <==      Total: 1
+13:04:44:775 DEBUG 20756 --- [http-nio-8081-exec-10] c.h.i.mapper.ItemMapper.selectBatchIds   : ==>  Preparing: SELECT id,name,price,stock,image,category,brand,spec,sold,comment_count,isAD,status,create_time,update_time,creater,updater FROM item WHERE id IN ( ? )
+13:04:44:775 DEBUG 20756 --- [http-nio-8081-exec-10] c.h.i.mapper.ItemMapper.selectBatchIds   : ==> Parameters: 317578(Long)
+13:04:44:823 DEBUG 20756 --- [http-nio-8081-exec-10] c.h.i.mapper.ItemMapper.selectBatchIds   : <==      Total: 1
