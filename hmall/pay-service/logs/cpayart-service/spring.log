@@ -1,0 +1,27 @@
+19:24:17:996  INFO 26388 --- [main] com.hmall.pay.PayApplication             : The following 1 profile is active: "dev"
+19:24:18:336  INFO 26388 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=0e722342-6e74-318b-aa37-27965ac150fa
+19:24:18:552  INFO 26388 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8086 (http)
+19:24:18:557  INFO 26388 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+19:24:18:558  INFO 26388 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.75]
+19:24:18:665  INFO 26388 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+19:24:18:666  INFO 26388 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 662 ms
+19:24:18:753  INFO 26388 --- [main] o.s.c.openfeign.FeignClientFactoryBean   : For 'user-service' URL not provided. Will try picking an instance via load-balancing.
+19:24:18:781  INFO 26388 --- [main] o.s.c.openfeign.FeignClientFactoryBean   : For 'trade-service' URL not provided. Will try picking an instance via load-balancing.
+19:24:19:377  INFO 26388 --- [main] com.alibaba.nacos.common.remote.client   : [RpcClientFactory] create a new rpc client of b33cf39f-ce75-4252-90b2-957691834dd6
+19:24:19:378  INFO 26388 --- [main] com.alibaba.nacos.common.remote.client   : [b33cf39f-ce75-4252-90b2-957691834dd6] RpcClient init label, labels = {module=naming, source=sdk}
+19:24:19:378  INFO 26388 --- [main] com.alibaba.nacos.common.remote.client   : [b33cf39f-ce75-4252-90b2-957691834dd6] RpcClient init, ServerListFactory = com.alibaba.nacos.client.naming.core.ServerListManager
+19:24:19:378  INFO 26388 --- [main] com.alibaba.nacos.common.remote.client   : [b33cf39f-ce75-4252-90b2-957691834dd6] Registry connection listener to current client:com.alibaba.nacos.client.naming.remote.gprc.redo.NamingGrpcRedoService
+19:24:19:379  INFO 26388 --- [main] com.alibaba.nacos.common.remote.client   : [b33cf39f-ce75-4252-90b2-957691834dd6] Register server push request handler:com.alibaba.nacos.client.naming.remote.gprc.NamingPushRequestHandler
+19:24:19:379  INFO 26388 --- [main] com.alibaba.nacos.common.remote.client   : [b33cf39f-ce75-4252-90b2-957691834dd6] Try to connect to server on start up, server: {serverIp = '127.0.0.1', server main port = 8848}
+19:24:19:500  INFO 26388 --- [main] com.alibaba.nacos.common.remote.client   : [b33cf39f-ce75-4252-90b2-957691834dd6] Success to connect to server [127.0.0.1:8848] on start up, connectionId = 1758108259387_127.0.0.1_62736
+19:24:19:501  INFO 26388 --- [main] com.alibaba.nacos.common.remote.client   : [b33cf39f-ce75-4252-90b2-957691834dd6] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$ConnectResetRequestHandler
+19:24:19:501  INFO 26388 --- [com.alibaba.nacos.client.remote.worker] com.alibaba.nacos.common.remote.client   : [b33cf39f-ce75-4252-90b2-957691834dd6] Notify connected event to listeners.
+19:24:19:502  INFO 26388 --- [main] com.alibaba.nacos.common.remote.client   : [b33cf39f-ce75-4252-90b2-957691834dd6] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$$Lambda$416/0x0000000801082958
+19:24:19:561  INFO 26388 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8086 (http) with context path ''
+19:24:19:561  INFO 26388 --- [main] c.a.c.n.registry.NacosServiceRegistry    : nacos registry, DEFAULT_GROUP cpayart-service 192.168.21.1:8086 register finished
+19:24:19:673  INFO 26388 --- [main] com.hmall.pay.PayApplication             : Started PayApplication in 3.256 seconds (JVM running for 3.467)
+19:24:19:676  INFO 26388 --- [main] c.a.c.n.refresh.NacosContextRefresher    : [Nacos Config] Listening config: dataId=cpayart-service, group=DEFAULT_GROUP
+19:24:19:676  INFO 26388 --- [main] c.a.c.n.refresh.NacosContextRefresher    : [Nacos Config] Listening config: dataId=cpayart-service-dev.yaml, group=DEFAULT_GROUP
+19:24:19:677  INFO 26388 --- [main] c.a.c.n.refresh.NacosContextRefresher    : [Nacos Config] Listening config: dataId=cpayart-service.yaml, group=DEFAULT_GROUP
+19:24:20:107  INFO 26388 --- [nacos-grpc-client-executor-7] com.alibaba.nacos.common.remote.client   : [b33cf39f-ce75-4252-90b2-957691834dd6] Receive server push request, request = NotifySubscriberRequest, requestId = 5
+19:24:20:119  INFO 26388 --- [nacos-grpc-client-executor-7] com.alibaba.nacos.common.remote.client   : [b33cf39f-ce75-4252-90b2-957691834dd6] Ack server push request, request = NotifySubscriberRequest, requestId = 5

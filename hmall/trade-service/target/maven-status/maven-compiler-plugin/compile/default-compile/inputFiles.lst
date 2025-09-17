@@ -1,0 +1,16 @@
+H:\Study\My_high-concurrency project\hmall\trade-service\src\main\java\com\hmall\trade\domain\po\Order.java
+H:\Study\My_high-concurrency project\hmall\trade-service\src\main\java\com\hmall\trade\TradeApplication.java
+H:\Study\My_high-concurrency project\hmall\trade-service\src\main\java\com\hmall\trade\mapper\OrderDetailMapper.java
+H:\Study\My_high-concurrency project\hmall\trade-service\src\main\java\com\hmall\trade\mapper\OrderLogisticsMapper.java
+H:\Study\My_high-concurrency project\hmall\trade-service\src\main\java\com\hmall\trade\mapper\OrderMapper.java
+H:\Study\My_high-concurrency project\hmall\trade-service\src\main\java\com\hmall\trade\service\IOrderService.java
+H:\Study\My_high-concurrency project\hmall\trade-service\src\main\java\com\hmall\trade\domain\po\OrderLogistics.java
+H:\Study\My_high-concurrency project\hmall\trade-service\src\main\java\com\hmall\trade\controller\OrderController.java
+H:\Study\My_high-concurrency project\hmall\trade-service\src\main\java\com\hmall\trade\domain\dto\OrderFormDTO.java
+H:\Study\My_high-concurrency project\hmall\trade-service\src\main\java\com\hmall\trade\service\impl\OrderDetailServiceImpl.java
+H:\Study\My_high-concurrency project\hmall\trade-service\src\main\java\com\hmall\trade\domain\po\OrderDetail.java
+H:\Study\My_high-concurrency project\hmall\trade-service\src\main\java\com\hmall\trade\service\IOrderDetailService.java
+H:\Study\My_high-concurrency project\hmall\trade-service\src\main\java\com\hmall\trade\service\impl\OrderLogisticsServiceImpl.java
+H:\Study\My_high-concurrency project\hmall\trade-service\src\main\java\com\hmall\trade\service\impl\OrderServiceImpl.java
+H:\Study\My_high-concurrency project\hmall\trade-service\src\main\java\com\hmall\trade\domain\vo\OrderVO.java
+H:\Study\My_high-concurrency project\hmall\trade-service\src\main\java\com\hmall\trade\service\IOrderLogisticsService.java
