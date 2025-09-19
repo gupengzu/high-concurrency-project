@@ -17,6 +17,10 @@ import com.hmall.pay.service.IPayOrderService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
+import org.springframework.amqp.rabbit.connection.CorrelationData;
+import org.springframework.util.concurrent.ListenableFutureCallback;
+import lombok.extern.slf4j.Slf4j;
 
 import java.time.LocalDateTime;
 
@@ -26,6 +30,7 @@ import java.time.LocalDateTime;
  * </p>
  *
  */
+@Slf4j
 @Service
 @RequiredArgsConstructor
 public class PayOrderServiceImpl extends ServiceImpl<PayOrderMapper, PayOrder> implements IPayOrderService {
@@ -50,7 +55,7 @@ public class PayOrderServiceImpl extends ServiceImpl<PayOrderMapper, PayOrder> i
         // 1.查询支付单
         PayOrder po = getById(payOrderDTO.getId());
         // 2.判断状态
-        if(!PayStatus.WAIT_BUYER_PAY.equalsValue(po.getStatus())){
+        if (!PayStatus.WAIT_BUYER_PAY.equalsValue(po.getStatus())) {
             // 订单不是未支付，状态异常
             throw new BizIllegalException("交易已支付或关闭！");
         }
@@ -64,9 +69,26 @@ public class PayOrderServiceImpl extends ServiceImpl<PayOrderMapper, PayOrder> i
         // 5.修改订单状态
         // tradeClient.markOrderPaySuccess(po.getBizOrderNo());
         try {
-            rabbitTemplate.convertAndSend("pay.direct", "pay.success", po.getBizOrderNo());
+            CorrelationData cd = new CorrelationData();
+            cd.getFuture().addCallback(new ListenableFutureCallback<CorrelationData.Confirm>() {
+                @Override
+                public void onFailure(Throwable ex) {
+                    log.error("支付成功消息发送异常", ex);
+                }
+
+                @Override
+                public void onSuccess(CorrelationData.Confirm result) {
+                    if (result.isAck()) {
+                        log.debug("支付成功消息发送到交换机成功，收到 ack!");
+                    } else {
+                        log.error("支付成功消息发送到交换机失败，收到 nack, reason : {}", result.getReason());
+                    }
+                }
+            });
+            rabbitTemplate.convertAndSend("pay.direct", "pay.success", po.getBizOrderNo(), cd);
         } catch (Exception e) {
-            log.error("支付成功的消息发送失败，支付单id：{}， 交易单id：{}", po.getId(), po.getBizOrderNo(), e);
+            log.error("支付成功的消息发送失败，支付单id：" + po.getId() + "， 交易单id：" + po.getBizOrderNo());
+            log.error("异常信息：", e);
         }
     }
 
@@ -79,7 +101,6 @@ public class PayOrderServiceImpl extends ServiceImpl<PayOrderMapper, PayOrder> i
                 .in(PayOrder::getStatus, PayStatus.NOT_COMMIT.getValue(), PayStatus.WAIT_BUYER_PAY.getValue())
                 .update();
     }
-
 
     private PayOrder checkIdempotent(PayApplyDTO applyDTO) {
         // 1.首先查询支付单
@@ -125,6 +146,7 @@ public class PayOrderServiceImpl extends ServiceImpl<PayOrderMapper, PayOrder> i
         payOrder.setBizUserId(UserContext.getUser());
         return payOrder;
     }
+
     public PayOrder queryByBizOrderNo(Long bizOrderNo) {
         return lambdaQuery()
                 .eq(PayOrder::getBizOrderNo, bizOrderNo)

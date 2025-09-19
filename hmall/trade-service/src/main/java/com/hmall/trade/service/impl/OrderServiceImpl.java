@@ -17,6 +17,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import com.hmall.api.client.CartClient;
 import io.seata.spring.annotation.GlobalTransactional;
+import com.hmall.trade.constant.*;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
+import org.springframework.messaging.handler.annotation.Header;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -40,6 +43,7 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements
     private final ItemClient itemClient;
     private final IOrderDetailService detailService;
     private final CartClient cartClient;
+    private final RabbitTemplate rabbitTemplate;
 
     @Override
     @GlobalTransactional
@@ -83,11 +87,28 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements
         } catch (Exception e) {
             throw new RuntimeException("库存不足！");
         }
+        // 5. 发送延迟消息，检测订单支付状态
+        rabbitTemplate.convertAndSend(
+                MQConstants.DELAY_EXCHANGE_NAME,
+                MQConstants.DELAY_ORDER_KEY,
+                order.getId(),
+                message -> {
+                    message.getMessageProperties().setDelay(10000);
+                    return message;
+                });
         return order.getId();
     }
 
     @Override
     public void markOrderPaySuccess(Long orderId) {
+        // 1.查询订单
+        Order old = getById(orderId);
+        // 2.判断订单状态
+        if (old == null || old.getStatus() != 1) {
+            // 订单不存在或者订单状态不是1，放弃处理
+            return;
+        }
+        // 3.尝试更新订单
         Order order = new Order();
         order.setId(orderId);
         order.setStatus(2);

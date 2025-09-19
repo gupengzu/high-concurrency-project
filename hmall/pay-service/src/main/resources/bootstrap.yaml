@@ -1,6 +1,6 @@
 spring:
   application:
-    name: cpayart-service # 服务名称
+    name: pay-service # 服务名称
   profiles:
     active: dev
   cloud:

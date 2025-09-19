@@ -1,5 +1,8 @@
 H:\Study\My_high-concurrency project\hmall\hm-api\src\main\java\com\hmall\api\dto\ItemDTO.java
 H:\Study\My_high-concurrency project\hmall\hm-api\src\main\java\com\hmall\api\dto\OrderDetailDTO.java
+H:\Study\My_high-concurrency project\hmall\hm-api\src\main\java\com\hmall\api\dto\PayOrderDTO.java
+H:\Study\My_high-concurrency project\hmall\hm-api\src\main\java\com\hmall\api\client\fallback\PayClientFallback.java
+H:\Study\My_high-concurrency project\hmall\hm-api\src\main\java\com\hmall\api\client\PayClient.java
 H:\Study\My_high-concurrency project\hmall\hm-api\src\main\java\com\hmall\api\client\UserClient.java
 H:\Study\My_high-concurrency project\hmall\hm-api\src\main\java\com\hmall\api\config\DefaultFeignConfig.java
 H:\Study\My_high-concurrency project\hmall\hm-api\src\main\java\com\hmall\api\client\CartClient.java
