@@ -5,6 +5,7 @@ com\hmall\pay\enums\PayType.class
 com\hmall\pay\mapper\PayOrderMapper.class
 com\itheima\publisher\config\MqConfig$1.class
 com\hmall\pay\PayApplication.class
+com\hmall\pay\service\impl\PayOrderServiceImpl$1.class
 com\hmall\pay\domain\dto\PayApplyDTO$PayApplyDTOBuilder.class
 com\hmall\pay\domain\po\PayOrder.class
 com\hmall\pay\domain\dto\PayApplyDTO.class

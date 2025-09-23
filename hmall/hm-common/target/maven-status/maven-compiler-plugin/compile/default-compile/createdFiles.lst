@@ -1,5 +1,6 @@
 com\hmall\common\utils\WebUtils.class
 com\hmall\common\config\MyBatisConfig.class
+com\hmall\common\config\RedisConfig.class
 com\hmall\common\config\MvcConfig.class
 com\hmall\common\exception\ForbiddenException.class
 com\hmall\common\interceptor\UserInfoInterceptor.class

@@ -19,7 +19,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
 import com.hmall.api.client.ItemClient;
-
+import org.springframework.data.redis.core.RedisTemplate;
 
 import java.util.Collection;
 import java.util.List;
@@ -44,6 +44,7 @@ public class CartServiceImpl extends ServiceImpl<CartMapper, Cart> implements IC
     private final DiscoveryClient discoveryClient;
     private final ItemClient itemClient;
     private final CartProperties cartProperties;
+    private final RedisTemplate redisTemplate;
 
     @Override
     public void addItem2Cart(CartFormDTO cartFormDTO) {
@@ -89,14 +90,36 @@ public class CartServiceImpl extends ServiceImpl<CartMapper, Cart> implements IC
     private void handleCartItems(List<CartVO> vos) {
         // TODO 1.获取商品id
         Set<Long> itemIds = vos.stream().map(CartVO::getItemId).collect(Collectors.toSet());
-        // 2.查询商品
-        List<ItemDTO> items = itemClient.queryItemByIds(itemIds);
+        // 2.批量查 Redis
+        List<String> redisKeys = itemIds.stream().map(id -> "item:" + id).collect(Collectors.toList());
+        List<Object> cachedList = redisTemplate.opsForValue().multiGet(redisKeys);
+
+        List<ItemDTO> items = new java.util.ArrayList<>();
+        List<Long> missIds = new java.util.ArrayList<>();
+        int idx = 0;
+        for (Long id : itemIds) {
+            Object obj = cachedList.get(idx++);
+            if (obj != null) {
+                items.add((ItemDTO) obj);
+            } else {
+                missIds.add(id);
+            }
+        }
+        // 3.查数据库并回写 Redis
+        if (!missIds.isEmpty()) {
+            List<ItemDTO> dbItems = itemClient.queryItemByIds(missIds);
+            for (ItemDTO item : dbItems) {
+                redisTemplate.opsForValue().set("item:" + item.getId(), item, 1, java.util.concurrent.TimeUnit.HOURS);
+                items.add(item);
+            }
+        }
+
         if (CollUtils.isEmpty(items)) {
             throw new BadRequestException("购物车中商品不存在");
         }
-        // 3.转为 id 到 item的map
+        // 4.转为 id 到 item的map
         Map<Long, ItemDTO> itemMap = items.stream().collect(Collectors.toMap(ItemDTO::getId, Function.identity()));
-        // 4.写入vo
+        // 5.写入vo
         for (CartVO v : vos) {
             ItemDTO item = itemMap.get(v.getItemId());
             if (item == null) {

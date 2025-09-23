@@ -11,3 +11,6 @@ hm:
       - /search/**
       - /users/login
       - /items/**
+spring:
+  main:
+    allow-bean-definition-overriding: true

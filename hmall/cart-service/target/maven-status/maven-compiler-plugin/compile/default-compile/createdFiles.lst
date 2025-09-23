@@ -1,5 +1,6 @@
 com\hmall\cart\mapper\CartMapper.class
 com\hmall\cart\service\ICartService.class
+com\hmall\cart\controller\RedisTestController.class
 com\hmall\cart\domain\vo\CartVO.class
 com\hmall\cart\controller\CartController.class
 com\hmall\cart\domain\dto\CartFormDTO.class

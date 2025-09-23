@@ -19,3 +19,4 @@ H:\Study\My_high-concurrency project\hmall\hm-common\src\main\java\com\hmall\com
 H:\Study\My_high-concurrency project\hmall\hm-common\src\main\java\com\hmall\common\config\MvcConfig.java
 H:\Study\My_high-concurrency project\hmall\hm-common\src\main\java\com\hmall\common\domain\PageQuery.java
 H:\Study\My_high-concurrency project\hmall\hm-common\src\main\java\com\hmall\common\utils\CollUtils.java
+H:\Study\My_high-concurrency project\hmall\hm-common\src\main\java\com\hmall\common\config\RedisConfig.java

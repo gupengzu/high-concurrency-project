@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.data.redis.core.RedisTemplate;
 
 import java.util.List;
 
@@ -33,6 +34,7 @@ import java.util.List;
 public class AddressController {
 
     private final IAddressService addressService;
+    private final RedisTemplate redisTemplate;
 
     @ApiOperation("根据id查询地址")
     @GetMapping("{addressId}")
@@ -46,16 +48,25 @@ public class AddressController {
         }
         return BeanUtils.copyBean(address, AddressDTO.class);
     }
+    
     @ApiOperation("查询当前用户地址列表")
     @GetMapping
     public List<AddressDTO> findMyAddresses() {
-        // 1.查询列表
-        List<Address> list = addressService.query().eq("user_id", UserContext.getUser()).list();
-        // 2.判空
+        Long userId = UserContext.getUser();
+        String redisKey = "address:list:" + userId;
+        // 1.先查 Redis
+        List<AddressDTO> cachedList = (List<AddressDTO>) redisTemplate.opsForValue().get(redisKey);
+        if (cachedList != null && !cachedList.isEmpty()) {
+            return cachedList;
+        }
+        // 2.查数据库
+        List<Address> list = addressService.query().eq("user_id", userId).list();
         if (CollUtils.isEmpty(list)) {
             return CollUtils.emptyList();
         }
-        // 3.转vo
-        return BeanUtils.copyList(list, AddressDTO.class);
+        List<AddressDTO> result = BeanUtils.copyList(list, AddressDTO.class);
+        // 3.写入 Redis，设置过期时间（如1小时）
+        redisTemplate.opsForValue().set(redisKey, result, 1, java.util.concurrent.TimeUnit.HOURS);
+        return result;
     }
 }
