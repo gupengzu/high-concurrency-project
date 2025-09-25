@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.hmall.common.domain.PageDTO;
 import com.hmall.common.domain.PageQuery;
 import com.hmall.common.utils.BeanUtils;
+import com.github.benmanes.caffeine.cache.Cache;
 import com.hmall.item.domain.dto.ItemDTO;
 import com.hmall.item.domain.dto.OrderDetailDTO;
 import com.hmall.item.domain.po.Item;
@@ -25,6 +26,7 @@ public class ItemController {
 
     private final IItemService itemService;
     private final RedisTemplate<String, Object> redisTemplate;
+    private final Cache<Long, ItemDTO> itemCache;
 
     @ApiOperation("分页查询商品")
     @GetMapping("/page")
@@ -39,22 +41,48 @@ public class ItemController {
     @GetMapping
     public List<ItemDTO> queryItemByIds(@RequestParam("ids") List<Long> ids) {
         List<ItemDTO> result = new java.util.ArrayList<>();
-        List<Long> missIds = new java.util.ArrayList<>();
-        // 1. 先批量查 Redis
-        List<Object> cachedList = redisTemplate.opsForValue().multiGet(
-                ids.stream().map(id -> "item:" + id).collect(java.util.stream.Collectors.toList()));
-        for (int i = 0; i < ids.size(); i++) {
-            Object obj = cachedList.get(i);
-            if (obj != null) {
-                result.add((ItemDTO) obj);
+        List<Long> jvmMissIds = new java.util.ArrayList<>();
+
+        // 1. 先批量查JVM缓存
+        for (Long id : ids) {
+            ItemDTO itemDTO = itemCache.getIfPresent(id);
+            if (itemDTO != null) {
+                result.add(itemDTO);
             } else {
-                missIds.add(ids.get(i));
+                jvmMissIds.add(id);
             }
         }
-        // 2. 查数据库并回写 Redis
-        if (!missIds.isEmpty()) {
-            List<ItemDTO> dbList = itemService.queryItemByIds(missIds);
+
+        // 2. 对JVM缓存未命中的，查Redis
+        List<Long> redisMissIds = new java.util.ArrayList<>();
+        if (!jvmMissIds.isEmpty()) {
+            List<Object> cachedList = redisTemplate.opsForValue().multiGet(
+                    jvmMissIds.stream().map(id -> "item:" + id).collect(java.util.stream.Collectors.toList()));
+            if (cachedList != null) {
+                for (int i = 0; i < jvmMissIds.size(); i++) {
+                    Object obj = cachedList.get(i);
+                    if (obj != null) {
+                        ItemDTO itemDTO = (ItemDTO) obj;
+                        result.add(itemDTO);
+                        // 回写到JVM缓存
+                        itemCache.put(jvmMissIds.get(i), itemDTO);
+                    } else {
+                        redisMissIds.add(jvmMissIds.get(i));
+                    }
+                }
+            } else {
+                // 如果Redis返回null，说明所有商品都需要查数据库
+                redisMissIds.addAll(jvmMissIds);
+            }
+        }
+
+        // 3. 对Redis缓存未命中的，查数据库并回写缓存
+        if (!redisMissIds.isEmpty()) {
+            List<ItemDTO> dbList = itemService.queryItemByIds(redisMissIds);
             for (ItemDTO item : dbList) {
+                // 回写到JVM缓存
+                itemCache.put(item.getId(), item);
+                // 回写到Redis
                 String redisKey = "item:" + item.getId();
                 redisTemplate.opsForValue().set(redisKey, item, 1, java.util.concurrent.TimeUnit.HOURS);
                 result.add(item);
@@ -67,16 +95,29 @@ public class ItemController {
     @GetMapping("{id}")
     public ItemDTO queryItemById(@PathVariable("id") Long id) {
         String redisKey = "item:" + id;
-        // 1. 先查 Redis
-        ItemDTO itemDTO = (ItemDTO) redisTemplate.opsForValue().get(redisKey);
+
+        // 1. 先查JVM缓存（Caffeine）
+        ItemDTO itemDTO = itemCache.getIfPresent(id);
         if (itemDTO != null) {
-            System.out.println("从Redis中获取的商品: " + itemDTO);
+            System.out.println("从JVM缓存中获取的商品: " + itemDTO);
             return itemDTO;
         }
-        // 2. 查数据库
-        itemDTO = BeanUtils.copyBean(itemService.getById(id), ItemDTO.class);
-        // 3. 写入 Redis，设置过期时间（如1小时）
+
+        // 2. 再查 Redis
+        itemDTO = (ItemDTO) redisTemplate.opsForValue().get(redisKey);
         if (itemDTO != null) {
+            System.out.println("从Redis中获取的商品: " + itemDTO);
+            // 回写到JVM缓存
+            itemCache.put(id, itemDTO);
+            return itemDTO;
+        }
+
+        // 3. 查数据库
+        itemDTO = BeanUtils.copyBean(itemService.getById(id), ItemDTO.class);
+        if (itemDTO != null) {
+            // 4. 写入JVM缓存
+            itemCache.put(id, itemDTO);
+            // 5. 写入Redis，设置过期时间（如1小时）
             redisTemplate.opsForValue().set(redisKey, itemDTO, 1, java.util.concurrent.TimeUnit.HOURS);
         }
         return itemDTO;
@@ -96,6 +137,9 @@ public class ItemController {
         item.setId(id);
         item.setStatus(status);
         itemService.updateById(item);
+
+        // 清除相关缓存
+        evictCache(id);
     }
 
     @ApiOperation("更新商品")
@@ -105,17 +149,42 @@ public class ItemController {
         item.setStatus(null);
         // 更新
         itemService.updateById(BeanUtils.copyBean(item, Item.class));
+
+        // 清除相关缓存
+        evictCache(item.getId());
     }
 
     @ApiOperation("根据id删除商品")
     @DeleteMapping("{id}")
     public void deleteItemById(@PathVariable("id") Long id) {
         itemService.removeById(id);
+
+        // 清除相关缓存
+        evictCache(id);
     }
 
     @ApiOperation("批量扣减库存")
     @PutMapping("/stock/deduct")
     public void deductStock(@RequestBody List<OrderDetailDTO> items) {
         itemService.deductStock(items);
+
+        // 清除相关商品的缓存（因为库存变化了）
+        for (OrderDetailDTO item : items) {
+            evictCache(item.getItemId());
+        }
+    }
+
+    /**
+     * 清除指定商品的缓存
+     * 
+     * @param itemId 商品ID
+     */
+    private void evictCache(Long itemId) {
+        // 清除JVM缓存
+        itemCache.invalidate(itemId);
+        // 清除Redis缓存
+        String redisKey = "item:" + itemId;
+        redisTemplate.delete(redisKey);
+        System.out.println("已清除商品ID为 " + itemId + " 的缓存");
     }
 }

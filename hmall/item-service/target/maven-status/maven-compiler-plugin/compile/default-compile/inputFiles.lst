@@ -1,4 +1,5 @@
 H:\Study\My_high-concurrency project\hmall\item-service\src\main\java\com\hmall\item\domain\dto\OrderDetailDTO.java
+H:\Study\My_high-concurrency project\hmall\item-service\src\main\java\com\hmall\item\config\CaffeineConfig.java
 H:\Study\My_high-concurrency project\hmall\item-service\src\main\java\com\hmall\item\domain\query\ItemPageQuery.java
 H:\Study\My_high-concurrency project\hmall\item-service\src\main\java\com\hmall\item\service\IItemService.java
 H:\Study\My_high-concurrency project\hmall\item-service\src\main\java\com\hmall\item\controller\SearchController.java

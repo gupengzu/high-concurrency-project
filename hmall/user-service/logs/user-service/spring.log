@@ -1,139 +1,52 @@
-01:06:07:906  INFO 29788 --- [main] com.hmall.user.UserApplication           : The following 1 profile is active: "dev"
-01:06:08:315  INFO 29788 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-01:06:08:317  INFO 29788 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-01:06:08:333  INFO 29788 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 0 Redis repository interfaces.
-01:06:08:462  INFO 29788 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=332847cd-5caf-3c72-8306-2e71f1d090e2
-01:06:08:697  INFO 29788 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8084 (http)
-01:06:08:703  INFO 29788 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-01:06:08:703  INFO 29788 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.75]
-01:06:08:777  INFO 29788 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-01:06:08:777  INFO 29788 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 858 ms
-01:06:10:013  INFO 29788 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2ControllerWebMvc#getDocumentation(String, HttpServletRequest)]
-01:06:10:636  INFO 29788 --- [main] com.alibaba.nacos.common.remote.client   : [RpcClientFactory] create a new rpc client of 6de008ac-5f24-44bf-820e-eba7a102178d
-01:06:10:636  INFO 29788 --- [main] com.alibaba.nacos.common.remote.client   : [6de008ac-5f24-44bf-820e-eba7a102178d] RpcClient init label, labels = {module=naming, source=sdk}
-01:06:10:639  INFO 29788 --- [main] com.alibaba.nacos.common.remote.client   : [6de008ac-5f24-44bf-820e-eba7a102178d] RpcClient init, ServerListFactory = com.alibaba.nacos.client.naming.core.ServerListManager
-01:06:10:639  INFO 29788 --- [main] com.alibaba.nacos.common.remote.client   : [6de008ac-5f24-44bf-820e-eba7a102178d] Registry connection listener to current client:com.alibaba.nacos.client.naming.remote.gprc.redo.NamingGrpcRedoService
-01:06:10:640  INFO 29788 --- [main] com.alibaba.nacos.common.remote.client   : [6de008ac-5f24-44bf-820e-eba7a102178d] Register server push request handler:com.alibaba.nacos.client.naming.remote.gprc.NamingPushRequestHandler
-01:06:10:640  INFO 29788 --- [main] com.alibaba.nacos.common.remote.client   : [6de008ac-5f24-44bf-820e-eba7a102178d] Try to connect to server on start up, server: {serverIp = '127.0.0.1', server main port = 8848}
-01:06:10:760  INFO 29788 --- [main] com.alibaba.nacos.common.remote.client   : [6de008ac-5f24-44bf-820e-eba7a102178d] Success to connect to server [127.0.0.1:8848] on start up, connectionId = 1758647170648_127.0.0.1_50235
-01:06:10:760  INFO 29788 --- [main] com.alibaba.nacos.common.remote.client   : [6de008ac-5f24-44bf-820e-eba7a102178d] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$ConnectResetRequestHandler
-01:06:10:760  INFO 29788 --- [com.alibaba.nacos.client.remote.worker] com.alibaba.nacos.common.remote.client   : [6de008ac-5f24-44bf-820e-eba7a102178d] Notify connected event to listeners.
-01:06:10:760  INFO 29788 --- [main] com.alibaba.nacos.common.remote.client   : [6de008ac-5f24-44bf-820e-eba7a102178d] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$$Lambda$416/0x00000008010820a0
-01:06:10:819  INFO 29788 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8084 (http) with context path ''
-01:06:10:826  INFO 29788 --- [main] c.a.c.n.registry.NacosServiceRegistry    : nacos registry, DEFAULT_GROUP user-service 192.168.21.1:8084 register finished
-01:06:10:977  INFO 29788 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Documentation plugins bootstrapped
-01:06:10:981  INFO 29788 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
-01:06:10:997  INFO 29788 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
-01:06:11:090  INFO 29788 --- [main] com.hmall.user.UserApplication           : Started UserApplication in 4.868 seconds (JVM running for 5.103)
-01:06:11:097  INFO 29788 --- [main] c.a.c.n.refresh.NacosContextRefresher    : [Nacos Config] Listening config: dataId=user-service.yaml, group=DEFAULT_GROUP
-01:06:11:097  INFO 29788 --- [main] c.a.c.n.refresh.NacosContextRefresher    : [Nacos Config] Listening config: dataId=user-service-dev.yaml, group=DEFAULT_GROUP
-01:06:11:098  INFO 29788 --- [main] c.a.c.n.refresh.NacosContextRefresher    : [Nacos Config] Listening config: dataId=user-service, group=DEFAULT_GROUP
-01:06:11:343  INFO 29788 --- [nacos-grpc-client-executor-6] com.alibaba.nacos.common.remote.client   : [6de008ac-5f24-44bf-820e-eba7a102178d] Receive server push request, request = NotifySubscriberRequest, requestId = 7
-01:06:11:347  INFO 29788 --- [nacos-grpc-client-executor-6] com.alibaba.nacos.common.remote.client   : [6de008ac-5f24-44bf-820e-eba7a102178d] Ack server push request, request = NotifySubscriberRequest, requestId = 7
-01:27:06:031  WARN 29788 --- [Thread-5] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Start destroying Publisher
-01:27:06:031  WARN 29788 --- [Thread-1] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Start destroying common HttpClient
-01:27:06:032  WARN 29788 --- [Thread-5] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Destruction of the end
-01:27:06:032  WARN 29788 --- [Thread-1] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Destruction of the end
-01:27:06:070  INFO 29788 --- [SpringApplicationShutdownHook] c.a.c.n.registry.NacosServiceRegistry    : De-registering from Nacos Server now...
-01:27:06:072  INFO 29788 --- [SpringApplicationShutdownHook] c.a.c.n.registry.NacosServiceRegistry    : De-registration finished.
-01:27:06:395  INFO 29788 --- [SpringApplicationShutdownHook] com.alibaba.nacos.common.remote.client   : Shutdown rpc client, set status to shutdown
-01:27:06:395  INFO 29788 --- [SpringApplicationShutdownHook] com.alibaba.nacos.common.remote.client   : Shutdown client event executor java.util.concurrent.ScheduledThreadPoolExecutor@2fb65444[Running, pool size = 2, active threads = 2, queued tasks = 0, completed tasks = 0]
-01:27:06:395  INFO 29788 --- [SpringApplicationShutdownHook] com.alibaba.nacos.common.remote.client   : Close current connection 1758647170648_127.0.0.1_50235
-01:27:06:396  INFO 29788 --- [nacos-grpc-client-executor-261] c.a.n.c.remote.client.grpc.GrpcClient    : [1758647170648_127.0.0.1_50235]Ignore complete event,isRunning:false,isAbandon=false
-01:27:06:398  INFO 29788 --- [SpringApplicationShutdownHook] c.a.n.c.remote.client.grpc.GrpcClient    : Shutdown grpc executor java.util.concurrent.ThreadPoolExecutor@37ff339c[Running, pool size = 5, active threads = 0, queued tasks = 0, completed tasks = 262]
-01:28:33:553  INFO 3004 --- [main] com.hmall.user.UserApplication           : The following 1 profile is active: "dev"
-01:28:33:942  INFO 3004 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-01:28:33:944  INFO 3004 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-01:28:33:960  INFO 3004 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 0 Redis repository interfaces.
-01:28:34:100  INFO 3004 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=e4e5da1e-fde0-3ac0-8920-1b41d77bea1a
-01:28:34:336  INFO 3004 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8084 (http)
-01:28:34:341  INFO 3004 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-01:28:34:342  INFO 3004 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.75]
-01:28:34:434  INFO 3004 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-01:28:34:434  INFO 3004 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 872 ms
-01:28:35:483  INFO 3004 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2ControllerWebMvc#getDocumentation(String, HttpServletRequest)]
-01:28:35:938  INFO 3004 --- [main] com.alibaba.nacos.common.remote.client   : [RpcClientFactory] create a new rpc client of c5e80a20-5b13-462a-8886-11cc13dd26da
-01:28:35:938  INFO 3004 --- [main] com.alibaba.nacos.common.remote.client   : [c5e80a20-5b13-462a-8886-11cc13dd26da] RpcClient init label, labels = {module=naming, source=sdk}
-01:28:35:941  INFO 3004 --- [main] com.alibaba.nacos.common.remote.client   : [c5e80a20-5b13-462a-8886-11cc13dd26da] RpcClient init, ServerListFactory = com.alibaba.nacos.client.naming.core.ServerListManager
-01:28:35:941  INFO 3004 --- [main] com.alibaba.nacos.common.remote.client   : [c5e80a20-5b13-462a-8886-11cc13dd26da] Registry connection listener to current client:com.alibaba.nacos.client.naming.remote.gprc.redo.NamingGrpcRedoService
-01:28:35:942  INFO 3004 --- [main] com.alibaba.nacos.common.remote.client   : [c5e80a20-5b13-462a-8886-11cc13dd26da] Register server push request handler:com.alibaba.nacos.client.naming.remote.gprc.NamingPushRequestHandler
-01:28:35:942  INFO 3004 --- [main] com.alibaba.nacos.common.remote.client   : [c5e80a20-5b13-462a-8886-11cc13dd26da] Try to connect to server on start up, server: {serverIp = '127.0.0.1', server main port = 8848}
-01:28:36:066  INFO 3004 --- [main] com.alibaba.nacos.common.remote.client   : [c5e80a20-5b13-462a-8886-11cc13dd26da] Success to connect to server [127.0.0.1:8848] on start up, connectionId = 1758648515947_127.0.0.1_52045
-01:28:36:066  INFO 3004 --- [com.alibaba.nacos.client.remote.worker] com.alibaba.nacos.common.remote.client   : [c5e80a20-5b13-462a-8886-11cc13dd26da] Notify connected event to listeners.
-01:28:36:066  INFO 3004 --- [main] com.alibaba.nacos.common.remote.client   : [c5e80a20-5b13-462a-8886-11cc13dd26da] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$ConnectResetRequestHandler
-01:28:36:066  INFO 3004 --- [main] com.alibaba.nacos.common.remote.client   : [c5e80a20-5b13-462a-8886-11cc13dd26da] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$$Lambda$416/0x0000000801082958
-01:28:36:129  INFO 3004 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8084 (http) with context path ''
-01:28:36:136  INFO 3004 --- [main] c.a.c.n.registry.NacosServiceRegistry    : nacos registry, DEFAULT_GROUP user-service 192.168.21.1:8084 register finished
-01:28:36:249  INFO 3004 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Documentation plugins bootstrapped
-01:28:36:251  INFO 3004 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
-01:28:36:267  INFO 3004 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
-01:28:36:329  INFO 3004 --- [main] com.hmall.user.UserApplication           : Started UserApplication in 4.509 seconds (JVM running for 4.768)
-01:28:36:332  INFO 3004 --- [main] c.a.c.n.refresh.NacosContextRefresher    : [Nacos Config] Listening config: dataId=user-service.yaml, group=DEFAULT_GROUP
-01:28:36:333  INFO 3004 --- [main] c.a.c.n.refresh.NacosContextRefresher    : [Nacos Config] Listening config: dataId=user-service-dev.yaml, group=DEFAULT_GROUP
-01:28:36:333  INFO 3004 --- [main] c.a.c.n.refresh.NacosContextRefresher    : [Nacos Config] Listening config: dataId=user-service, group=DEFAULT_GROUP
-01:28:36:618  INFO 3004 --- [nacos-grpc-client-executor-8] com.alibaba.nacos.common.remote.client   : [c5e80a20-5b13-462a-8886-11cc13dd26da] Receive server push request, request = NotifySubscriberRequest, requestId = 21
-01:28:36:620  INFO 3004 --- [nacos-grpc-client-executor-8] com.alibaba.nacos.common.remote.client   : [c5e80a20-5b13-462a-8886-11cc13dd26da] Ack server push request, request = NotifySubscriberRequest, requestId = 21
-05:36:48:070  INFO 3004 --- [http-nio-8084-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-05:36:48:074  INFO 3004 --- [http-nio-8084-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-05:36:48:089  INFO 3004 --- [http-nio-8084-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 15 ms
-05:36:48:465  INFO 3004 --- [http-nio-8084-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-05:36:49:269  INFO 3004 --- [http-nio-8084-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-05:36:49:279 DEBUG 3004 --- [http-nio-8084-exec-2] c.h.user.mapper.UserMapper.selectList    : ==>  Preparing: SELECT id,username,password,phone,create_time,update_time,status,balance FROM user WHERE (username = ?)
-05:36:49:354 DEBUG 3004 --- [http-nio-8084-exec-2] c.h.user.mapper.UserMapper.selectList    : ==> Parameters: Jack(String)
-05:36:49:476 DEBUG 3004 --- [http-nio-8084-exec-2] c.h.user.mapper.UserMapper.selectList    : <==      Total: 1
-06:26:40:443  WARN 3004 --- [Thread-1] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Start destroying common HttpClient
-06:26:40:443  WARN 3004 --- [Thread-5] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Start destroying Publisher
-06:26:40:549  WARN 3004 --- [Thread-5] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Destruction of the end
-06:26:40:551  WARN 3004 --- [Thread-1] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Destruction of the end
-06:26:40:586  INFO 3004 --- [SpringApplicationShutdownHook] c.a.c.n.registry.NacosServiceRegistry    : De-registering from Nacos Server now...
-06:26:40:589  INFO 3004 --- [SpringApplicationShutdownHook] c.a.c.n.registry.NacosServiceRegistry    : De-registration finished.
-06:26:40:936  INFO 3004 --- [SpringApplicationShutdownHook] com.alibaba.nacos.common.remote.client   : Shutdown rpc client, set status to shutdown
-06:26:40:936  INFO 3004 --- [SpringApplicationShutdownHook] com.alibaba.nacos.common.remote.client   : Shutdown client event executor java.util.concurrent.ScheduledThreadPoolExecutor@20a5128c[Running, pool size = 2, active threads = 2, queued tasks = 0, completed tasks = 0]
-06:26:40:937  INFO 3004 --- [SpringApplicationShutdownHook] com.alibaba.nacos.common.remote.client   : Close current connection 1758648515947_127.0.0.1_52045
-06:26:40:943  INFO 3004 --- [nacos-grpc-client-executor-3584] c.a.n.c.remote.client.grpc.GrpcClient    : [1758648515947_127.0.0.1_52045]Ignore complete event,isRunning:false,isAbandon=false
-06:26:40:947  INFO 3004 --- [SpringApplicationShutdownHook] c.a.n.c.remote.client.grpc.GrpcClient    : Shutdown grpc executor java.util.concurrent.ThreadPoolExecutor@496c47cd[Running, pool size = 6, active threads = 0, queued tasks = 0, completed tasks = 3585]
-06:26:40:954  INFO 3004 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-06:26:41:475  INFO 3004 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-06:26:50:795  INFO 33512 --- [main] com.hmall.user.UserApplication           : The following 1 profile is active: "dev"
-06:26:51:183  INFO 33512 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-06:26:51:184  INFO 33512 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-06:26:51:197  INFO 33512 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 0 Redis repository interfaces.
-06:26:51:327  INFO 33512 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=e4e5da1e-fde0-3ac0-8920-1b41d77bea1a
-06:26:51:576  INFO 33512 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8084 (http)
-06:26:51:582  INFO 33512 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-06:26:51:583  INFO 33512 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.75]
-06:26:51:685  INFO 33512 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-06:26:51:685  INFO 33512 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 881 ms
-06:26:52:933  INFO 33512 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2ControllerWebMvc#getDocumentation(String, HttpServletRequest)]
-06:26:53:276  INFO 33512 --- [main] com.alibaba.nacos.common.remote.client   : [RpcClientFactory] create a new rpc client of fbd2b3e8-87e7-4c08-9153-704ce5d4853c
-06:26:53:276  INFO 33512 --- [main] com.alibaba.nacos.common.remote.client   : [fbd2b3e8-87e7-4c08-9153-704ce5d4853c] RpcClient init label, labels = {module=naming, source=sdk}
-06:26:53:277  INFO 33512 --- [main] com.alibaba.nacos.common.remote.client   : [fbd2b3e8-87e7-4c08-9153-704ce5d4853c] RpcClient init, ServerListFactory = com.alibaba.nacos.client.naming.core.ServerListManager
-06:26:53:277  INFO 33512 --- [main] com.alibaba.nacos.common.remote.client   : [fbd2b3e8-87e7-4c08-9153-704ce5d4853c] Registry connection listener to current client:com.alibaba.nacos.client.naming.remote.gprc.redo.NamingGrpcRedoService
-06:26:53:278  INFO 33512 --- [main] com.alibaba.nacos.common.remote.client   : [fbd2b3e8-87e7-4c08-9153-704ce5d4853c] Register server push request handler:com.alibaba.nacos.client.naming.remote.gprc.NamingPushRequestHandler
-06:26:53:278  INFO 33512 --- [main] com.alibaba.nacos.common.remote.client   : [fbd2b3e8-87e7-4c08-9153-704ce5d4853c] Try to connect to server on start up, server: {serverIp = '127.0.0.1', server main port = 8848}
-06:26:53:395  INFO 33512 --- [main] com.alibaba.nacos.common.remote.client   : [fbd2b3e8-87e7-4c08-9153-704ce5d4853c] Success to connect to server [127.0.0.1:8848] on start up, connectionId = 1758666413286_127.0.0.1_61035
-06:26:53:395  INFO 33512 --- [main] com.alibaba.nacos.common.remote.client   : [fbd2b3e8-87e7-4c08-9153-704ce5d4853c] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$ConnectResetRequestHandler
-06:26:53:395  INFO 33512 --- [com.alibaba.nacos.client.remote.worker] com.alibaba.nacos.common.remote.client   : [fbd2b3e8-87e7-4c08-9153-704ce5d4853c] Notify connected event to listeners.
-06:26:53:395  INFO 33512 --- [main] com.alibaba.nacos.common.remote.client   : [fbd2b3e8-87e7-4c08-9153-704ce5d4853c] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$$Lambda$416/0x0000000801082958
-06:26:53:423  INFO 33512 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8084 (http) with context path ''
-06:26:53:429  INFO 33512 --- [main] c.a.c.n.registry.NacosServiceRegistry    : nacos registry, DEFAULT_GROUP user-service 192.168.21.1:8084 register finished
-06:26:53:547  INFO 33512 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Documentation plugins bootstrapped
-06:26:53:549  INFO 33512 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
-06:26:53:561  INFO 33512 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
-06:26:53:626  INFO 33512 --- [main] com.hmall.user.UserApplication           : Started UserApplication in 4.571 seconds (JVM running for 4.801)
-06:26:53:630  INFO 33512 --- [main] c.a.c.n.refresh.NacosContextRefresher    : [Nacos Config] Listening config: dataId=user-service.yaml, group=DEFAULT_GROUP
-06:26:53:631  INFO 33512 --- [main] c.a.c.n.refresh.NacosContextRefresher    : [Nacos Config] Listening config: dataId=user-service-dev.yaml, group=DEFAULT_GROUP
-06:26:53:631  INFO 33512 --- [main] c.a.c.n.refresh.NacosContextRefresher    : [Nacos Config] Listening config: dataId=user-service, group=DEFAULT_GROUP
-06:26:54:012  INFO 33512 --- [nacos-grpc-client-executor-7] com.alibaba.nacos.common.remote.client   : [fbd2b3e8-87e7-4c08-9153-704ce5d4853c] Receive server push request, request = NotifySubscriberRequest, requestId = 54
-06:26:54:014  INFO 33512 --- [nacos-grpc-client-executor-7] com.alibaba.nacos.common.remote.client   : [fbd2b3e8-87e7-4c08-9153-704ce5d4853c] Ack server push request, request = NotifySubscriberRequest, requestId = 54
-06:49:56:766  WARN 33512 --- [Thread-5] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Start destroying Publisher
-06:49:56:766  WARN 33512 --- [Thread-1] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Start destroying common HttpClient
-06:49:56:766  WARN 33512 --- [Thread-5] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Destruction of the end
-06:49:56:829  WARN 33512 --- [Thread-1] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Destruction of the end
-06:49:56:918  INFO 33512 --- [SpringApplicationShutdownHook] c.a.c.n.registry.NacosServiceRegistry    : De-registering from Nacos Server now...
-06:49:56:919  INFO 33512 --- [SpringApplicationShutdownHook] c.a.c.n.registry.NacosServiceRegistry    : De-registration finished.
-06:49:57:245  INFO 33512 --- [SpringApplicationShutdownHook] com.alibaba.nacos.common.remote.client   : Shutdown rpc client, set status to shutdown
-06:49:57:257  INFO 33512 --- [SpringApplicationShutdownHook] com.alibaba.nacos.common.remote.client   : Shutdown client event executor java.util.concurrent.ScheduledThreadPoolExecutor@1f199b06[Running, pool size = 2, active threads = 2, queued tasks = 0, completed tasks = 0]
-06:49:57:257  INFO 33512 --- [SpringApplicationShutdownHook] com.alibaba.nacos.common.remote.client   : Close current connection 1758666413286_127.0.0.1_61035
-06:49:57:259  INFO 33512 --- [nacos-grpc-client-executor-287] c.a.n.c.remote.client.grpc.GrpcClient    : [1758666413286_127.0.0.1_61035]Ignore complete event,isRunning:false,isAbandon=false
-06:49:57:345  INFO 33512 --- [SpringApplicationShutdownHook] c.a.n.c.remote.client.grpc.GrpcClient    : Shutdown grpc executor java.util.concurrent.ThreadPoolExecutor@a16d998[Running, pool size = 5, active threads = 0, queued tasks = 0, completed tasks = 288]
+18:34:53:829  INFO 37840 --- [main] com.hmall.user.UserApplication           : The following 1 profile is active: "dev"
+18:34:54:208  INFO 37840 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+18:34:54:211  INFO 37840 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+18:34:54:225  INFO 37840 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 0 Redis repository interfaces.
+18:34:54:353  INFO 37840 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=6f11d534-17c1-37c1-9341-4817579291d4
+18:34:54:609  INFO 37840 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8084 (http)
+18:34:54:615  INFO 37840 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+18:34:54:615  INFO 37840 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.75]
+18:34:54:714  INFO 37840 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+18:34:54:715  INFO 37840 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 875 ms
+18:34:55:763  INFO 37840 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2ControllerWebMvc#getDocumentation(String, HttpServletRequest)]
+18:34:56:099  INFO 37840 --- [main] com.alibaba.nacos.common.remote.client   : [RpcClientFactory] create a new rpc client of 54f43ed5-64cd-42e6-8ca6-2b4ae7ab3fe9
+18:34:56:099  INFO 37840 --- [main] com.alibaba.nacos.common.remote.client   : [54f43ed5-64cd-42e6-8ca6-2b4ae7ab3fe9] RpcClient init label, labels = {module=naming, source=sdk}
+18:34:56:100  INFO 37840 --- [main] com.alibaba.nacos.common.remote.client   : [54f43ed5-64cd-42e6-8ca6-2b4ae7ab3fe9] RpcClient init, ServerListFactory = com.alibaba.nacos.client.naming.core.ServerListManager
+18:34:56:100  INFO 37840 --- [main] com.alibaba.nacos.common.remote.client   : [54f43ed5-64cd-42e6-8ca6-2b4ae7ab3fe9] Registry connection listener to current client:com.alibaba.nacos.client.naming.remote.gprc.redo.NamingGrpcRedoService
+18:34:56:100  INFO 37840 --- [main] com.alibaba.nacos.common.remote.client   : [54f43ed5-64cd-42e6-8ca6-2b4ae7ab3fe9] Register server push request handler:com.alibaba.nacos.client.naming.remote.gprc.NamingPushRequestHandler
+18:34:56:101  INFO 37840 --- [main] com.alibaba.nacos.common.remote.client   : [54f43ed5-64cd-42e6-8ca6-2b4ae7ab3fe9] Try to connect to server on start up, server: {serverIp = '127.0.0.1', server main port = 8848}
+18:34:56:223  INFO 37840 --- [main] com.alibaba.nacos.common.remote.client   : [54f43ed5-64cd-42e6-8ca6-2b4ae7ab3fe9] Success to connect to server [127.0.0.1:8848] on start up, connectionId = 1758796496107_127.0.0.1_55497
+18:34:56:223  INFO 37840 --- [main] com.alibaba.nacos.common.remote.client   : [54f43ed5-64cd-42e6-8ca6-2b4ae7ab3fe9] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$ConnectResetRequestHandler
+18:34:56:223  INFO 37840 --- [com.alibaba.nacos.client.remote.worker] com.alibaba.nacos.common.remote.client   : [54f43ed5-64cd-42e6-8ca6-2b4ae7ab3fe9] Notify connected event to listeners.
+18:34:56:223  INFO 37840 --- [main] com.alibaba.nacos.common.remote.client   : [54f43ed5-64cd-42e6-8ca6-2b4ae7ab3fe9] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$$Lambda$416/0x0000000801083250
+18:34:56:267  INFO 37840 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8084 (http) with context path ''
+18:34:56:274  INFO 37840 --- [main] c.a.c.n.registry.NacosServiceRegistry    : nacos registry, DEFAULT_GROUP user-service 192.168.21.1:8084 register finished
+18:34:56:384  INFO 37840 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Documentation plugins bootstrapped
+18:34:56:386  INFO 37840 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+18:34:56:398  INFO 37840 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+18:34:56:461  INFO 37840 --- [main] com.hmall.user.UserApplication           : Started UserApplication in 4.372 seconds (JVM running for 4.605)
+18:34:56:464  INFO 37840 --- [main] c.a.c.n.refresh.NacosContextRefresher    : [Nacos Config] Listening config: dataId=user-service.yaml, group=DEFAULT_GROUP
+18:34:56:465  INFO 37840 --- [main] c.a.c.n.refresh.NacosContextRefresher    : [Nacos Config] Listening config: dataId=user-service-dev.yaml, group=DEFAULT_GROUP
+18:34:56:465  INFO 37840 --- [main] c.a.c.n.refresh.NacosContextRefresher    : [Nacos Config] Listening config: dataId=user-service, group=DEFAULT_GROUP
+18:34:56:796  INFO 37840 --- [nacos-grpc-client-executor-7] com.alibaba.nacos.common.remote.client   : [54f43ed5-64cd-42e6-8ca6-2b4ae7ab3fe9] Receive server push request, request = NotifySubscriberRequest, requestId = 7
+18:34:56:798  INFO 37840 --- [nacos-grpc-client-executor-7] com.alibaba.nacos.common.remote.client   : [54f43ed5-64cd-42e6-8ca6-2b4ae7ab3fe9] Ack server push request, request = NotifySubscriberRequest, requestId = 7
+18:35:04:486  INFO 37840 --- [http-nio-8084-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+18:35:04:487  INFO 37840 --- [http-nio-8084-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+18:35:04:488  INFO 37840 --- [http-nio-8084-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+18:35:04:696  INFO 37840 --- [http-nio-8084-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+18:35:05:976  INFO 37840 --- [http-nio-8084-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+18:35:05:986 DEBUG 37840 --- [http-nio-8084-exec-1] c.h.user.mapper.UserMapper.selectList    : ==>  Preparing: SELECT id,username,password,phone,create_time,update_time,status,balance FROM user WHERE (username = ?)
+18:35:06:064 DEBUG 37840 --- [http-nio-8084-exec-1] c.h.user.mapper.UserMapper.selectList    : ==> Parameters: Jack(String)
+18:35:06:228 DEBUG 37840 --- [http-nio-8084-exec-1] c.h.user.mapper.UserMapper.selectList    : <==      Total: 1
+19:56:58:139  WARN 37840 --- [Thread-5] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Start destroying Publisher
+19:56:58:138  WARN 37840 --- [Thread-1] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Start destroying common HttpClient
+19:56:58:139  WARN 37840 --- [Thread-5] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Destruction of the end
+19:56:58:142  WARN 37840 --- [Thread-1] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Destruction of the end
+19:56:58:180  INFO 37840 --- [SpringApplicationShutdownHook] c.a.c.n.registry.NacosServiceRegistry    : De-registering from Nacos Server now...
+19:56:58:183  INFO 37840 --- [SpringApplicationShutdownHook] c.a.c.n.registry.NacosServiceRegistry    : De-registration finished.
+19:56:58:258  INFO 37840 --- [SpringApplicationShutdownHook] com.alibaba.nacos.common.remote.client   : Shutdown rpc client, set status to shutdown
+19:56:58:258  INFO 37840 --- [SpringApplicationShutdownHook] com.alibaba.nacos.common.remote.client   : Shutdown client event executor java.util.concurrent.ScheduledThreadPoolExecutor@6510831a[Running, pool size = 2, active threads = 2, queued tasks = 0, completed tasks = 0]
+19:56:58:258  INFO 37840 --- [SpringApplicationShutdownHook] com.alibaba.nacos.common.remote.client   : Close current connection 1758796496107_127.0.0.1_55497
+19:56:58:259  INFO 37840 --- [nacos-grpc-client-executor-993] c.a.n.c.remote.client.grpc.GrpcClient    : [1758796496107_127.0.0.1_55497]Ignore complete event,isRunning:false,isAbandon=false
+19:56:58:261  INFO 37840 --- [SpringApplicationShutdownHook] c.a.n.c.remote.client.grpc.GrpcClient    : Shutdown grpc executor java.util.concurrent.ThreadPoolExecutor@7a3dd0f3[Running, pool size = 5, active threads = 0, queued tasks = 0, completed tasks = 994]
+19:56:58:274  INFO 37840 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
