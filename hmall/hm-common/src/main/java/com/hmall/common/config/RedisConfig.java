@@ -5,6 +5,8 @@ import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.serializer.GenericJackson2JsonRedisSerializer;
 import org.springframework.data.redis.serializer.RedisSerializer;
+import io.lettuce.core.ReadFrom;
+import org.springframework.boot.autoconfigure.data.redis.LettuceClientConfigurationBuilderCustomizer;
 
 @Configuration
 public class RedisConfig {
@@ -25,5 +27,12 @@ public class RedisConfig {
     template.setHashValueSerializer(jsonRedisSerializer);
     // 返回
     return template;
+  }
+  
+  // 添加如下Bean，配置读写分离策略
+  @Bean
+  public LettuceClientConfigurationBuilderCustomizer clientConfigurationBuilderCustomizer() {
+    // 可选：ReadFrom.REPLICA_PREFERRED、MASTER、MASTER_PREFERRED、REPLICA
+    return clientConfigurationBuilder -> clientConfigurationBuilder.readFrom(ReadFrom.REPLICA_PREFERRED);
   }
 }
