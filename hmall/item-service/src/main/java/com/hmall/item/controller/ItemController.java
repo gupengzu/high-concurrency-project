@@ -15,6 +15,7 @@ import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
 
@@ -186,5 +187,15 @@ public class ItemController {
         String redisKey = "item:" + itemId;
         redisTemplate.delete(redisKey);
         System.out.println("已清除商品ID为 " + itemId + " 的缓存");
+
+        // 清除Nginx本地缓存
+        try {
+            RestTemplate restTemplate = new RestTemplate();
+            // 这里假设nginx监听18080端口，按实际情况修改
+            String url = "http://localhost:18080/api/cache/item/purge?id=" + itemId;
+            restTemplate.getForObject(url, String.class);
+        } catch (Exception e) {
+            System.err.println("清除Nginx缓存失败: " + e.getMessage());
+        }
     }
 }
